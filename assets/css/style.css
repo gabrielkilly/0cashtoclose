@@ -197,6 +197,18 @@ h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase;
 }
 
+#logo a::after {
+  display: inline;
+  margin-left: 5px;
+  content: "Savings Life Investment"
+}
+
+@media (max-width: 500px) {
+  #logo a::after { 
+    content: ""
+  }
+}
+
 #logo img {
   height: 40px;
 }

@@ -229,4 +229,8 @@
     items: 1
   });
 
+  $(".cta-btn").click(() => {
+    $("#subject").val("Become a lender")
+  });
+
 })(jQuery);

@@ -1,1 +1,0 @@
-gsutil rsync -d -r -x "..history/$|.*\.jpg$" . gs://static_site_bucket

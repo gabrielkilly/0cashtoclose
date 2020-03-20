@@ -45,7 +45,7 @@
       <div id="logo" class="pull-left">
         <!-- <h1><a href="#intro" class="scrollto"><img src="assets/img/full-logo.png"/></a></h1> -->
         <!-- Uncomment below if you prefer to use an image logo -->
-        <a href="#intro"><img src="assets/img/new-icon.png" alt="Logo"> Savings Life Investment</a>
+        <a href="#intro"><img src="assets/img/new-icon.png" alt="Logo"></a>
       </div>
 
       <nav id="nav-menu-container">
@@ -80,7 +80,7 @@
               <div class="carousel-content">
                 <h2>Savings. Life. Investment.</h2>
                 <p>Saving you money on your deals every step of the turn. Our goal is always for you to bring $0 cash to close.</p>
-                <a href="#featured-services" class="btn-get-started scrollto">Get Started</a>
+                <a href="#contact" class="btn-get-started scrollto">Get Started</a>
                 <!-- <h2>Saving you money on your deals every step of the turn.</h2>
                 <h3>Our goal is always for you to bring $0 cash to close.</h3>
                 <a href="#featured-services" class="btn-get-started scrollto">Get Started</a> -->
@@ -193,7 +193,7 @@
       <div class="container text-center">
         <h3>Become a Lender</h3>
         <p>Fund real estate deals, see higher than average returns, grow your money more passively with us.</p>
-        <a class="cta-btn" href="#">Start Lending Now</a>
+        <a class="cta-btn scrollto" href="#contact">Start Lending Now</a>
       </div>
     </section>
     <!-- End Call To Action Section -->
@@ -690,14 +690,24 @@
         </div>
 
         <div class="form">
-          <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+         <form action="" method="post" role="form" class="php-email-form">
             <div class="form-row">
               <div class="form-group col-md-6">
-                <input type="text" name="name" class="form-control" id="name" placeholder="Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                <input type="text" name="fName" class="form-control" id="fName" placeholder="First Name" required data-rule="required" data-msg="First Name is required."/>
                 <div class="validate"></div>
               </div>
               <div class="form-group col-md-6">
-                <input type="email" class="form-control" name="email" id="email" placeholder="Email" data-rule="email" data-msg="Please enter a valid email" />
+                <input type="text" class="form-control" name="lName" id="lName" placeholder="Last Name" required data-rule="required" data-msg="Last Name is required."/>
+                <div class="validate"></div>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <input type="text" name="phone" class="form-control" id="phone" placeholder="Phone" data-rule="minlen:10" data-msg="Input valid phone number."/>
+                <div class="validate"></div>
+              </div>
+              <div class="form-group col-md-6">
+                <input type="email" class="form-control" name="email" id="email" placeholder="Email" />
                 <div class="validate"></div>
               </div>
             </div>
@@ -757,19 +767,20 @@
                   <option value="WI">Wisconsin</option>
                   <option value="WV">West Virginia</option>
                   <option value="WY">Wyoming</option>
-                </select>              <div class="validate"></div>
+                </select>              
               </div>
               <div class="form-group col-md-4">
-                <input type="text" class="form-control" name="city" id="city" placeholder="City" data-rule="" data-msg="Please enter at least 1 chars" />
+                <input type="text" class="form-control" name="city" id="city" placeholder="City" data-rule="minlen:3" data-msg="City must be longer than 3 characters." />
+                <div class="validate"></div>
               </div>
               <div class="form-group col-md-4">
-                <input type="number" class="form-control" name="zipCode" id="zipCode" placeholder="Zip Code" data-rule="number" data-msg="Please enter a valid Zip Code" />
+                <input type="text" class="form-control" name="zipCode" id="zipCode" placeholder="Zip Code" data-rule="minlen:4" data-msg="Zip Code must be longer than 4 characters."/>
+                <div class="validate"></div>
               </div>
             </div>
             <div class="form-group">
-              <!-- <input type="text" class="form-control" name="reason" id="reason" placeholder="Reason" data-rule="" data-msg="Please enter at least 1 chars" /> -->
-              <select class="form-control" id="state" name="state">
-                <option value="">Reason</option>
+              <select class="form-control" id="subject" name="subject">
+                <option value="">Subject</option>
                 <option value="Become a lender">Become a lender</option>
                 <option value="Have a deal">Have a deal</option>
                 <option value="Help understanding deal">Help understanding deal</option>
@@ -778,7 +789,7 @@
               <div class="validate"></div>
             </div>
             <div class="form-group">
-              <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+              <textarea class="form-control" name="message" rows="5" placeholder="Message"></textarea>
               <div class="validate"></div>
             </div>
             <div class="mb-3">

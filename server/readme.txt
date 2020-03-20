@@ -1,0 +1,1 @@
+This was written to be used as a google cloud function. 

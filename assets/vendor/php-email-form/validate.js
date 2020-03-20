@@ -93,8 +93,7 @@ jQuery(document).ready(function($) {
     else var str = $(this).serialize();
 
     var this_form = $(this);
-    var action = $(this).attr('action');
-
+    var action = "https://us-central1-seraphic-disk-269400.cloudfunctions.net/contactForm ";
     if( ! action ) {
       this_form.find('.loading').slideUp();
       this_form.find('.error-message').slideDown().html('The form action property is not set!');
