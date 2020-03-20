@@ -1,0 +1,9 @@
+{
+  "name": "0cashtoclose.com",
+  "version": "1.0.0",
+  "description": "Marketing site for small financial services company using Bootstrapmade template.",
+  "main": "server/index.js",
+  "repository": "git@github.com:gabrielkilly/0cashtoclose.git",
+  "author": "Gabriel Killy <gabby.killy@gmail.com>",
+  "license": "MIT"
+}
