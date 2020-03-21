@@ -31,15 +31,14 @@ async function contactForm(contactInfo, responseSender) {
         port: 465,
         secure: true, // true for 465, false for other ports
         auth: {
-            user: "gabykilly@gmail.com",
+            user: process.env.GMAIL_USER,
             pass: process.env.GMAIL_APP_KEY
         }
     });
-    console.log(responseSender)
     try {
         let messageForUs = await transporter.sendMail({
-            from: '"Gabriel Killy" <gabykilly@gmail.com>',
-            to: '"Gabriel Killy" <gabykilly@gmail.com>', 
+            from: `"${process.env.GMAIL_USER_NAME}" <${process.env.GMAIL_USER}>`,
+            to: `"${process.env.GMAIL_USER_NAME}" <${process.env.GMAIL_USER}>`, 
             subject: "Message sent from website",
             text: `Sender: ${fName} ${lName} \n\n Subject: ${subject} \n\n Message: ${message}`, 
             html: `<b>Sender:</b> ${fName} ${lName} <br/><br/> <b>Subject:</b> ${subject} <br/><br/> <b>Message:</b> ${message}`
@@ -47,11 +46,11 @@ async function contactForm(contactInfo, responseSender) {
         // console.log("Message sent: %s", messageForUs.messageId);
 
         let welcomeMessage = await transporter.sendMail({
-            from: '"Gabriel Killy" <gabykilly@gmail.com>',
+            from: `"${process.env.GMAIL_USER_NAME}" <${process.env.GMAIL_USER}>`,
             to: email, 
-            subject: "Thanks for Reaching Out",
-            text: `Hi ${fName} ${lName} \n\n We appreciate the time you took to send us a message. We'll be getting back to you shortly. \n\n Best Regards, \n The Savings Life Investments Team`, 
-            html: `Hi ${fName} ${lName} <br/><br/> We appreciate the time you took to send us a message. We'll be getting back to you shortly. <br/><br/> Best Regards, <br/> The Savings Life Investments Team`
+            subject: "0cashtoclose.com | Thanks for reaching out",
+            text: `Hi ${fName} ${lName}, \n\n We appreciate the time you took to send us a message. We'll be getting back to you shortly. \n\n Best Regards, \n The Savings Life Investments Team`, 
+            html: `Hi ${fName} ${lName}, <br/><br/> We appreciate the time you took to send us a message. We'll be getting back to you shortly. <br/><br/> Best Regards, <br/> The Savings Life Investments Team`
         });
         // console.log("Message sent: %s", welcomeMessage.messageId);
     } catch(error) {
